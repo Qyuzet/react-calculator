@@ -1,0 +1,141 @@
+/* General Styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: rgb(83, 83, 83);
+  font-family: Arial, sans-serif;
+}
+
+.calculator-container {
+  scale: 0.9;
+  width: 100%;
+  max-width: 320px;
+  height: auto; /* Automatically adjusts height */
+  background-color: #000000;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures space is distributed between the display and buttons */
+}
+
+/* Display Styles */
+.calculator-display {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: right;
+  font-size: 2.5rem;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 4px;
+  flex-shrink: 0; /* Prevents shrinking */
+}
+
+/* Grid Styles */
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  flex-grow: 1; /* Allows grid to expand within the container */
+}
+
+/* Button Styles */
+.calculator-button {
+  padding: 1.25rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button-number {
+  background-color: #333333;
+}
+
+.button-operator {
+  background-color: #4d4d4d;
+}
+
+.button-clear {
+  background-color: #ff4136;
+}
+
+.button-equals {
+  background-color: #0066ff;
+  grid-row: span 2;
+}
+
+.button-zero {
+  grid-column: span 2;
+}
+
+/* Hover and Active Effects */
+.calculator-button:hover {
+  opacity: 0.8;
+}
+
+.calculator-button:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .calculator-container {
+    max-width: 90%;
+    padding: 0.75rem;
+  }
+
+  .calculator-display {
+    font-size: 2rem;
+    padding: 0.75rem;
+  }
+
+  .calculator-button {
+    font-size: 1.25rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .calculator-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.25rem;
+  }
+
+  .calculator-button {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .calculator-display {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .calculator-container {
+    max-width: 400px;
+    padding: 1.5rem;
+  }
+
+  .calculator-display {
+    font-size: 3rem;
+    padding: 1.5rem;
+  }
+
+  .calculator-button {
+    font-size: 1.75rem;
+    padding: 1.5rem;
+  }
+}
